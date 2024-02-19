@@ -10,8 +10,8 @@ import {
   BadRequestException,
   InternalServerErrorException,
 } from '@nestjs/common';
-import { CommentsService } from './comment.service';
-import { Comment as CommentModel } from './comment.model';
+import { CommentsService } from './comentarios.service';
+import { Comment as CommentModel } from './comentarios.model';
 
 @Controller('comentarios')
 export class CommentsController {

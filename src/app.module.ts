@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from './auth/auth.module';
 import { PostsModule } from './posts/posts.module'; // Importa el módulo de posts
-import { CommentsModule } from './comentarios/comment.module';
+import { CommentsModule } from './comentarios/comentarios.module';
 
 
 @Module({
