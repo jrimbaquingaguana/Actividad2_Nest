@@ -18,6 +18,9 @@ El proyecto se organiza en varios archivos principales dentro del directorio `sr
 Además, el módulo `CommentsModule` es importado y utilizado en `app.module.ts` para integrarse con el resto de la aplicación.
 
 ## Implementación
+1. Si se quiere ejecutar el código no olvidar colocar `npm install`
+2. Una vez descargado los módulos, ejecutar `npm start`
+3. Entrar a Thunder Client para hacer las peticiones correspondientes.
 
 ### Modelo de Datos
 
@@ -52,10 +55,10 @@ Se utilizan middleware para funcionalidades adicionales como autenticación y va
 Se usó Thunder Client para probar la API y asegurarse del correcto funcionamiento de todas las funcionalidades implementadas.
 
 ### Método Get
-![Evidencia Get](Evidencias/Get_comentarios.jpg)
+![Evidencia Get](Evidencias/Get_comentarios.png)
 
 ### Método Post
-![Evidencia Post](Evidencias/Post_comentarios.jpg)
+![Evidencia Post](Evidencias/Post_comentarios.png)
 
 ## Conclusión
 
