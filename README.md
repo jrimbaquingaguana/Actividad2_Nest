@@ -1,71 +1,59 @@
-# Blog Personal Nest
+# Funcionalidad de Comentarios
 
-Este es un proyecto de blog personal desarrollado con NestJS.
-
-## Sugerencia
-
-¡Antes de clonar o realizar un fork de este repositorio, te animamos a que intentes crear el proyecto desde cero siguiendo el tutorial!
-
-## Tutorial
-
-Si deseas aprender a implementar autenticación en un blog personal con NestJS, te invitamos a seguir el tutorial en el siguiente enlace: 
-
-- [**Tutorial:** Implementación de un Blog Personal con Nest.js](/Tutoriales/tutorial.md)
-
-- [**Tutorial:** Implementación de Autenticación en un Blog Personal con Nest.js](/Tutoriales/tutorial-auth.md)
+Este documento describe la implementación de la funcionalidad de comentarios en el blog, permitiendo a los usuarios agregar comentarios a las publicaciones existentes.
 
 ## Descripción
 
-Este proyecto es un blog personal desarrollado utilizando el framework NestJS, que permite a los usuarios crear, leer, actualizar y eliminar publicaciones. Utiliza una arquitectura modular y está diseñado siguiendo los principios de RESTful API.
+La funcionalidad de comentarios ha sido diseñada para enriquecer la interacción en el blog permitiendo a los usuarios dejar comentarios en las publicaciones. Esto se logra a través de un nuevo módulo dentro de la aplicación llamado `CommentsModule`, que gestiona las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para los comentarios.
 
-## Funcionalidades
+## Estructura del Proyecto
 
-- Crear una nueva publicación
-- Leer una publicación existente
-- Actualizar una publicación existente
-- Eliminar una publicación existente
+El proyecto se organiza en varios archivos principales dentro del directorio `src/comentarios`:
 
-## Tecnologías utilizadas
+- `comentarios.controller.ts`: Controlador que define las rutas para las operaciones CRUD sobre los comentarios.
+- `comentarios.model.ts`: Define la interfaz `Comment` que representa la estructura de un comentario.
+- `comentarios.module.ts`: Módulo que agrupa los componentes relacionados con los comentarios.
+- `comentarios.service.ts`: Servicio que implementa la lógica de negocio para las operaciones CRUD de los comentarios.
 
-- NestJS
-- TypeScript
-- UUID
+Además, el módulo `CommentsModule` es importado y utilizado en `app.module.ts` para integrarse con el resto de la aplicación.
 
-## Instalación
+## Implementación
 
-- Clona este repositorio: git clone https://github.com/statick88/blogpersonalnest
-- Instala las dependencias: npm install
+### Modelo de Datos
 
-## Uso
+El modelo `Comment` representa la estructura de un comentario e incluye los siguientes campos:
 
-- Inicia el servidor de desarrollo: npm run start:dev
-- Realiza las peticiones HTTP utilizando tu herramienta favorita como Thunder Client.
+- `id`: Identificador único del comentario.
+- `date`: Fecha en la que se realizó el comentario.
+- `content`: Contenido del comentario.
+- `name`: Nombre del autor del comentario.
 
-## Endpoints
+### Servicio
 
-- GET /posts: Obtener todas las publicaciones
-- GET /posts/:id: Obtener una publicación por su ID
-- POST /posts: Crear una nueva publicación
-- PUT /posts/:id: Actualizar una publicación existente
-- DELETE /posts/:id: Eliminar una publicación existente
+El `CommentsService` maneja la lógica para operar sobre la colección de comentarios, incluyendo:
 
-## Autenticación
+- Crear un nuevo comentario.
+- Obtener todos los comentarios o un comentario específico por su ID.
+- Actualizar un comentario existente.
+- Eliminar un comentario.
 
-Para proteger las rutas y los recursos, se ha implementado la autenticación mediante tokens JWT (JSON Web Tokens). 
+El servicio inicializa algunos comentarios de prueba para facilitar la demostración de la funcionalidad.
 
-Debes obtener un token de acceso enviando una solicitud POST a `/auth/login` con las credenciales de usuario. Luego, incluye este token en la cabecera Authorization de tus solicitudes HTTP utilizando el esquema Bearer.
+### Controlador
 
-## Mejoras Futuras
+El `CommentsController` expone rutas para interactuar con la funcionalidad de comentarios a través de solicitudes HTTP, permitiendo realizar las operaciones CRUD.
 
-- [✅] Implementación de autenticación y autorización.
-- [❌] Implementación de comentarios en las publicaciones.
-- [❌] Mejorar la validación de datos en las solicitudes POST y PUT.
+### Middleware, Interceptors y Filtros
 
+Se utilizan middleware para funcionalidades adicionales como autenticación y validación de datos. Los interceptores y filtros se implementan para manejar tareas adicionales y errores de forma centralizada.
 
-## Contribuyendo
+## Pruebas
 
-¡Las contribuciones son bienvenidas! Si tienes alguna sugerencia, mejora o corrección, por favor crea un pull request.
+Se usó Thunder Client para probar la API y asegurarse del correcto funcionamiento de todas las funcionalidades implementadas.
 
-## Licencia
+## Conclusión
 
-[MIT](LICENSE)
+La implementación de la funcionalidad de comentarios permite a los usuarios interactuar dejando sus opiniones en las publicaciones del blog, enriqueciendo así la experiencia del usuario y fomentando la participación en la plataforma.
+
+## Elaborado por:
+Jose Imbaquinga, Ricardo Rivadeneira
