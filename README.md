@@ -51,6 +51,12 @@ Se utilizan middleware para funcionalidades adicionales como autenticación y va
 
 Se usó Thunder Client para probar la API y asegurarse del correcto funcionamiento de todas las funcionalidades implementadas.
 
+### Método Get
+![Evidencia Get](Evidencias/Get_comentarios.jpg)
+
+### Método Post
+![Evidencia Post](Evidencias/Post_comentarios.jpg)
+
 ## Conclusión
 
 La implementación de la funcionalidad de comentarios permite a los usuarios interactuar dejando sus opiniones en las publicaciones del blog, enriqueciendo así la experiencia del usuario y fomentando la participación en la plataforma.
